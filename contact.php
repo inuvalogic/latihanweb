@@ -20,13 +20,11 @@ include 'db.php';
 
 	<nav id="menu">
 		<ul>
-			<li><a href="http://webhade.id/course/">Home</a></li>
-			<li><a href="http://webhade.id/course/about.php">About</a></li>
-			<li><a href="http://webhade.id/course/contact.php">Contact</a></li>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="contact.php">Contact</a></li>
 		</ul>
 	</nav>
-
-	<div id="slider"></div>
 
 	<section id="content" class="container">
 
