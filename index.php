@@ -40,9 +40,9 @@ include 'db.php';
 		
 		<?php
 
-		$sql_select = "SELECT * FROM `artikel` WHERE `id` = ?";
+		$sql_select = "SELECT * FROM `artikel` ORDER BY `id` DESC LIMIT 0,1";
 		$query1 = $pdo->prepare($sql_select);
-		$query1->execute(array(1));
+		$query1->execute();
 		$row = $query1->fetch();
 		?>
 		<article id="artikel">
@@ -55,21 +55,24 @@ include 'db.php';
 				<p><?php echo $row['isi']; ?></p>
 				<a href="detail.php?id=<?php echo $row['id']; ?>">Read More</a>
 			</div>
+			<div class="clear">
+				<a class="readmore" href="list-artikel.php">Lihat Semua Artikel</a>
+			</div>
 		</article>
 
 		<aside id="sidebar">
 		<?php
 
-		$sql_select_artikel = "SELECT * FROM `artikel` WHERE `id` != ? LIMIT 0,2";
+		$sql_select_artikel = "SELECT * FROM `artikel` WHERE `id` != ? ORDER BY `id` DESC LIMIT 0,2";
 		$query2 = $pdo->prepare($sql_select_artikel);
-		$query2->execute(array(1));
+		$query2->execute(array($row['id']));
 		$row2 = $query2->fetchAll();
 
 		foreach ($row2 as $data) {
 		?>
 			<div class="item">
 				<h3 class="title"><?php echo $data['judul']; ?></h3>
-				<p class="description"><?php echo $data['isi']; ?></p>
+				<p class="description"><?php echo substr($data['isi'], 0, 200); ?>...</p>
 				<a class="readmore" href="detail.php?id=<?php echo $data['id']; ?>">Read More</a>
 			</div>
 		<?php } ?>

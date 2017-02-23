@@ -14,6 +14,9 @@ header {
 	width: 90%;
 	margin: 0 auto;
 }
+.clear {
+	clear: both;
+}
 
 /* MENU */
 #menu ul {
@@ -104,13 +107,16 @@ header {
 #sidebar .item p.description {
 	margin-bottom: 50px;
 }
-#sidebar .item a.readmore {
+
+/* READ MORE */
+a.readmore {
 	background: #00afab;
 	padding: 12px 40px;
 	text-decoration: none;
 	color: #FFFFFF;
+	display: inline-block;
 }
-#sidebar .item a.readmore:hover {
+a.readmore:hover {
 	background: #036f6d;
 }
 
@@ -122,6 +128,7 @@ header {
 	color: #878787;
 	font-size: 15px;
 	padding: 30px;
+	margin-top: 40px;
 }
 #footer .title {
 	font-size: 22px;

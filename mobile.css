@@ -35,4 +35,7 @@
 		width: 100%;
 		height: inherit;
 	}
+	#form-contact input, #form-contact textarea {
+		width: 90%;
+	}
 }
