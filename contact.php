@@ -43,7 +43,7 @@ include 'db.php';
 					<label for="pesan">Pesan</label>
 					<textarea name="pesan"></textarea>
 				</div>
-				<button type="submit" name="submit">Kirim</button>
+				<button type="submit" name="submit" value="kirim">Kirim</button>
 			</form>
 			<?php
 
